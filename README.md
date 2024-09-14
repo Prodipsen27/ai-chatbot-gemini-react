@@ -1,6 +1,7 @@
 ## Live Demo
 
 Check out the live demo here.
+https://geminiclone-prodip27.netlify.app/
 
 # AI Chatbot Gemini React
 
