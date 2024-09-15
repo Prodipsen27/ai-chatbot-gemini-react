@@ -1,5 +1,6 @@
 import { createContext, useState } from "react";
 import run from '../components/config/gemini';
+// import run from '../components/config/geminiFile';
 
 export const Context = createContext();
 
@@ -53,7 +54,9 @@ const ContextProvider = (props)=>{
                 newResponse += "<b>" +responseArray[i]+ "</b>"
             }
         }
+
         let newResponse2= newResponse.split("*").join("</br>")
+        
        let newResponseArray = newResponse2.split(" ");
        for (let index = 0; index < newResponseArray.length; index++) {
         const nextWord=newResponseArray[index];
