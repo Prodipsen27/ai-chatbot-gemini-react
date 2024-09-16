@@ -180,7 +180,7 @@ terminal
             )}
           <div className="searchbox flex items-center justify-between gap-5 bg-[#f0f4f9] dark:bg-gray-800 py-[5px] px-5 rounded-[50px] max-w-fit sm:max-w-full">
             
-            <form onSubmit={handleSubmit} className="flex items-center gap-4 ">
+            <form onSubmit={handleSubmit} className="flex sticky items-center gap-4 ">
               
               <input
                 type="text"
