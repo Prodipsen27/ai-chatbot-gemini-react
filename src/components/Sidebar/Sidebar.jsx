@@ -16,17 +16,20 @@ const Sidebar = () => {
   };
 
   return (
-    <div className={`sidebar sm:min-h-screen sm:inline-flex sm:flex-col sm:justify-between py-[25px] px-[15px] hidden ${darkMode ? 'bg-gray-800 text-gray-300' : 'bg-gray-200 text-gray-800'}`}>
+    <div className={`sidebar sm:min-h-screen sm:inline-flex sm:flex-col sm:justify-between py-[25px] px-[15px] hidden ${darkMode ? 'bg-gray-800 text-gray-500' : 'bg-gray-200 text-gray-800'}`}>
       <div className="top">
-        <img
-          src={assets.menu_icon}
-          onClick={() => setExtended(prev => !prev)}
-          className='w-[20px] ml-[10px] block cursor-pointer'
-          alt=""
-        />
-        <div className='newChat mt-[50px] inline-flex items-center gap-[10px] py-[10px] px-[15px] bg-gray-300 rounded-[50px] text-sm cursor-pointer' onClick={() => newChat()}>
-          <img src={assets.plus_icon} className='w-[10px]' alt="" />
-          {extended ? <p>New Chat</p> : null}
+      
+      <span className="material-symbols-outlined w-[24px] ml-[10px] block cursor-pointer hover:text-gray-400" onClick={() => setExtended(prev => !prev)}>menu
+</span>
+<div className=' hover:text-gray-400'>
+        <div className='newChat mt-[50px] inline-flex items-center gap-[10px] py-[10px] px-[10px] rounded-[50px] text-sm cursor-pointer ' onClick={() => newChat()}>
+         
+        <span className="material-symbols-outlined w-[10px] ">
+add
+</span>
+        
+          {extended ? <p className='pl-2 '>New Chat</p> : null}
+          </div>
         </div>
         {extended ? (
           <div className="recent flex flex-col animate-fadeIn">
@@ -34,11 +37,14 @@ const Sidebar = () => {
             {previousPrompt.map((item) => {
               return (
                 <div
-                  className="recent-entry flex items-start gap-[10px] p-[10px] pr-10 rounded-[50px] cursor-pointer hover:bg-slate-400"
+                  className={`recent-entry flex items-start gap-[10px] p-[10px] pr-10 rounded-[50px] cursor-pointer ${darkMode ? 'text-gray-400 hover:bg-gray-700' : 'hover:bg-gray-400'}`}
                   onClick={() => loadPrompt(item)}
                   key={item}
                 >
-                  <img src={assets.message_icon} className='w-[25px]' alt="" />
+                  <span className="material-symbols-outlined w-[25px]">
+sms
+</span>
+            
                   <p>{item.slice(0, 17)} ...</p>
                 </div>
               );
@@ -48,16 +54,23 @@ const Sidebar = () => {
       </div>
 
       <div className="bottom flex flex-col">
-        <div className="bottom-items flex items-start gap-[10px] p-[10px] rounded-[50px] cursor-pointer hover:bg-slate-400">
-          <img src={assets.question_icon} className='w-[20px]' alt="" />
+        <div className="bottom-items flex items-start gap-[10px] p-[10px] rounded-[50px] cursor-pointer hover:text-gray-400 ">
+        <span className="material-symbols-outlined w-[20px]">help</span>
+       
           {extended ? <p>Help</p> : null}
         </div>
-        <div className="bottom-items flex items-start gap-[10px] p-[10px] rounded-[50px] cursor-pointer hover:bg-slate-400">
-          <img src={assets.history_icon} className='w-[20px]' alt="" />
+        <div className="bottom-items flex items-start gap-[10px] p-[10px] rounded-[50px] cursor-pointer hover:text-gray-400">
+       
+<span className="material-symbols-outlined w-[20px]">
+history
+</span>
           {extended ? <p>Activity</p> : null}
         </div>
-        <div className="bottom-items flex items-start gap-[10px] p-[10px] rounded-[50px] cursor-pointer hover:bg-slate-400">
-          <img src={assets.setting_icon} className='w-[20px]' alt="" />
+        <div className="bottom-items flex items-start gap-[10px] p-[10px] rounded-[50px] cursor-pointer hover:text-gray-400">
+        <span className="material-symbols-outlined w-[20px]">
+settings
+</span>
+         
           {extended ? <p>Settings</p> : null}
         </div>
       </div>
