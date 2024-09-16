@@ -94,6 +94,9 @@ dark_mode
       </div>
 
       <div className="main-container max-w-[95%] md:max-w-[900px] mx-auto my-8">
+      {/* <div className="main-container max-w-[95%] md:max-w-[900px] mx-auto my-8"> */}
+        {/* Display Chat History */}
+        
         {!showResult ? (
           <>
             <div className="greet my-10 text-[36px] sm:text-[48px] md:text-[56px] font-medium p-5 text-gray-400 dark:text-gray-200">
